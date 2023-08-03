@@ -1,5 +1,5 @@
 <div class="card " style="width: 18rem;" data-bs-toggle="modal" [attr.data-bs-target]="'#characterModal-' + character.id">
-    <img src="{{image}}" alt="" height="250px">
+    <img src="{{image}}" alt="" height="250px" class="border-bottom border-2">
     <div class="card-body">
         <p class="card-text">{{name}}</p>
     </div>
@@ -9,14 +9,27 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header text-center">
-          <h1 class="modal-title fs-5" id="characterModalLabel">{{character.name}}</h1>
+          <h1 class="modal-title fs-5" id="characterModalLabel">{{name}}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Description:</label>
-              <p>{{character.description ? character.description : 'No description available'}}</p>
+              <label for="recipient-name" class="col-form-label"><b>Description:</b></label>
+              <p>{{description ? description : 'No description available'}}</p>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"><b>Comics:</b></label>
+              <!-- <p *ngFor="let comic of comics">{{comic}}</p> -->
+              <p>{{comics ? comics : "No comics available"}}</p>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"><b>Series:</b></label>
+              <p>{{series ? series : "No series available"}}</p>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"><b>Stories:</b></label>
+              <p>{{stories ? stories : "No stories available"}}</p>
             </div>
           </form>
         </div>
