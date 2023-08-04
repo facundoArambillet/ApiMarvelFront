@@ -1,41 +1,47 @@
-<div class="card " style="width: 18rem;" data-bs-toggle="modal" [attr.data-bs-target]="'#characterModal-' + character.id">
-    <img src="{{image}}" alt="" height="250px" class="border-bottom border-2">
-    <div class="card-body">
-        <p class="card-text">{{name}}</p>
-    </div>
+<div class="card " style="width: 18rem;" data-bs-toggle="modal"
+  [attr.data-bs-target]="'#characterModal-' + character.id">
+  <img src="{{image}}" alt="" height="250px" class="border-bottom border-2">
+  <div class="card-body">
+    <p class="card-text">{{name}}</p>
+  </div>
 </div>
 
-<div class="modal fade" [id]="'characterModal-' + character.id" tabindex="-1" aria-labelledby="characterModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h1 class="modal-title fs-5" id="characterModalLabel">{{name}}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="recipient-name" class="col-form-label"><b>Description:</b></label>
-              <p>{{description ? description : 'No description available'}}</p>
-            </div>
-            <div class="mb-3">
-              <label for="recipient-name" class="col-form-label"><b>Comics:</b></label>
-              <!-- <p *ngFor="let comic of comics">{{comic}}</p> -->
-              <p>{{comics ? comics : "No comics available"}}</p>
-            </div>
-            <div class="mb-3">
-              <label for="recipient-name" class="col-form-label"><b>Series:</b></label>
-              <p>{{series ? series : "No series available"}}</p>
-            </div>
-            <div class="mb-3">
-              <label for="recipient-name" class="col-form-label"><b>Stories:</b></label>
-              <p>{{stories ? stories : "No stories available"}}</p>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+<div class="modal fade" [id]="'characterModal-' + character.id" tabindex="-1" aria-labelledby="characterModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h1 class="modal-title fs-5" id="characterModalLabel">{{name}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><b>Description:</b></label>
+            <p>{{description ? description : 'No description available'}}</p>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><b>Comics:</b></label>
+            <!-- <p *ngFor="let comic of comics">{{comic}}</p> -->
+            <!-- Pregunto ademas por el lenght porque sino no me establece le mensaje predeterminado -->
+            <p>{{comics && comics.length ? comics : "No comics available"}}</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><b>Series:</b></label>
+            <p>{{series && series.length ? series : "No series available"}}</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><b>Stories:</b></label>
+            <p>{{stories && stories.length ? stories : "No stories available"}}</p>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>

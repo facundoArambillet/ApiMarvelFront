@@ -13,10 +13,10 @@ export class CharacterComponent {
   image: string = '';
   name: string = '';
   description: string = '';
-  comics : string[] = [];
-  events : string[] = [];
-  series : string[] = [];
-  stories : string[] = [];
+  comics: string[] = [];
+  events: string[] = [];
+  series: string[] = [];
+  stories: string[] = [];
 
   loadComics() {
     for(let comic of this.character.comics.items) {
@@ -38,7 +38,7 @@ export class CharacterComponent {
       this.stories.push(storie.name);
     }
   }
-
+ 
   ngOnInit() {
     this.image = this.character.thumbnail.path + '.' + this.character.thumbnail.extension;
     this.name = this.character.name;
