@@ -1,4 +1,5 @@
 import { Component, Input, inject } from '@angular/core';
+import { MarvelCharacter } from 'src/app/models/MarvelCharacter';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, Input, inject } from '@angular/core';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent {
-  @Input() character: any = {}
+  @Input() character!: MarvelCharacter;
 
   image: string = '';
   name: string = '';

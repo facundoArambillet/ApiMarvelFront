@@ -12,6 +12,7 @@ import { CharacterComponent } from './components/character/character.component';
 import { NgOptimizedImage } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoadingComponent } from './components/loading/loading.component';
+import { RequestTimeComponent } from './components/request-time/request-time.component';
 
 
 
@@ -23,6 +24,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     NavbarComponent,
     CharacterComponent,
     LoadingComponent,
+    RequestTimeComponent,
     
   ],
   imports: [

@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { MarvelCharacter } from 'src/app/models/MarvelCharacter';
+import { MarvelCharacterService } from 'src/app/services/marvel-character.service';
 
 @Component({
   selector: 'app-characters',
@@ -7,10 +9,9 @@ import { Component, inject } from '@angular/core';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent {
-  http = inject(HttpClient);
-
+  marvelCharacterService = inject(MarvelCharacterService);
   loading: boolean = true;
-  characters : any[] = [];
+  characters : MarvelCharacter[] = [];
 
 
   loadCharacters() {
@@ -18,25 +19,13 @@ export class CharactersComponent {
     const password = window.sessionStorage.getItem("password");
 
     if (email && password) {
-
-      const headers = new HttpHeaders({
-        'Authorization': 'Basic ' + btoa(email + ':' + password)
-      });
-
-      this.http.get<any[]>("http://localhost:8080/app/marvel", { headers: headers, withCredentials: true }).subscribe(
+      this.marvelCharacterService.getAll(email,password).subscribe(
         (data) => {
-          console.log(data)
-          if (data != null) {
-            this.characters = data;
-            console.log(this.characters);
-          }
-          this.loading = false; // Finaliza la carga, establece loading en false
-        },
-        (error) => {
-          console.error("Error en la carga de characters", error);
-          this.loading = false; // Finaliza la carga aunque haya ocurrido un error
+          this.characters = data;
+          this.loading = false;
         }
-      );
+      )
+      
     } else {
       console.log("Las credenciales no están disponibles en sessionStorage");
       this.loading = false; // Finaliza la carga si no hay credenciales
