@@ -13,6 +13,7 @@ import { NgOptimizedImage } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoadingComponent } from './components/loading/loading.component';
 import { RequestTimeComponent } from './components/request-time/request-time.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
@@ -33,7 +34,8 @@ import { RequestTimeComponent } from './components/request-time/request-time.com
     FormsModule,
     HttpClientModule,
     NgOptimizedImage,
-    NgbModule
+    NgbModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

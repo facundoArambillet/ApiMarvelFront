@@ -7,11 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RequestTimeService {
+  private email: string = window.sessionStorage.getItem("email") ?? "";
+  private password: string = window.sessionStorage.getItem("password") ?? "";
+  
   constructor(private http: HttpClient) { }
 
-  public getAll(email: string, password: string): Observable<RequestTime[]> {
+  public getAll(): Observable<RequestTime[]> {
     const headers = new HttpHeaders({
-      'Authorization': 'Basic ' + btoa(email + ':' + password)
+      'Authorization': 'Basic ' + btoa(this.email + ':' + this.password)
     });
 
     const url = "http://localhost:8080/app/time";

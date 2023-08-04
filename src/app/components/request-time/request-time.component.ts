@@ -17,7 +17,7 @@ export class RequestTimeComponent {
     const password = window.sessionStorage.getItem("password");
 
     if (email && password) {
-      this.requestTimeService.getAll(email,password).subscribe(
+      this.requestTimeService.getAll().subscribe(
         (data) => {
           this.requestsTime = data;
           this.loading = false;
