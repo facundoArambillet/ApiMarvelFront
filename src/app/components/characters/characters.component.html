@@ -2,13 +2,13 @@
 <div *ngIf="!loading">
     <app-navbar></app-navbar>
 
-    <div class="text-center" style="margin-top: 5%;">
+    <div class="text-center">
         <h1>Marvel characters</h1>
     </div>
-    <div class="container" style="margin-top: 5%;" >
+    <div class="container" style="margin-top: 2%;" >
         <!-- Le digo que cuando quede 20% por scrolear(es decir que se scroleo el 80%) ejecute la funcion onScroll -->
         <div class="row" infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
-            <app-character *ngFor="let character of characters" [character]="character" class="col-4" style="margin-bottom: 2%;" ></app-character>
+            <app-character *ngFor="let character of characters" [character]="character" class="col-lg-4 col-md-6 col-sm-12" style="margin-bottom: 2%;" ></app-character>
             
             <button *ngIf="loadingMore" class="btn btn-primary" type="button" disabled>
                 <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>

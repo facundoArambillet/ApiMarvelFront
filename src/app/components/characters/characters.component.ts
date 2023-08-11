@@ -1,4 +1,3 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { MarvelCharacter } from 'src/app/models/MarvelCharacter';
 import { MarvelCharacterService } from 'src/app/services/marvel-character.service';

@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&family=Tilt+Prism&family=Titillium+Web:wght@200;400;600&display=swap');
+h1 {
+    font-family: 'Tilt Prism';
+    font-weight: bold;
+}

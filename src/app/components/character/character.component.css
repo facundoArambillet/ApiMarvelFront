@@ -1,4 +1,17 @@
 .card :hover {
     cursor: pointer;
-    
+}
+@media (max-width: 767px) {
+    .character-card {
+        width: 90%;
+    }
+    .character-col {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width: 667px) {
+    .character-card {
+        width: 80%;
+    }
 }
